@@ -4,6 +4,8 @@
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
 
+#include "TestKernel.h"
+
 template<>
 InputParameters validParams<HummingbirdApp>()
 {
@@ -45,6 +47,7 @@ extern "C" void HummingbirdApp__registerObjects(Factory & factory) { Hummingbird
 void
 HummingbirdApp::registerObjects(Factory & factory)
 {
+	registerKernel(TestKernel);
 }
 
 // External entry point for dynamic syntax association
